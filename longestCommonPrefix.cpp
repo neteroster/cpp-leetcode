@@ -26,3 +26,24 @@ public:
         }
     }
 };
+
+// 2st version O(nlogn + m)
+
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        sort(strs.begin(), strs.end()); // O(nlogn)
+
+        auto beg = strs.begin();
+        auto ed = strs.end() - 1;
+
+        int min_len = beg->size() < ed->size() ?
+            beg->size() : ed->size();
+
+        int i;
+        for (i = 0; i < min_len && (*beg)[i] == (*ed)[i]; i++);
+
+        return strs.begin()->substr(0, i);
+    }
+
+};
