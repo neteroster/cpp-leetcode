@@ -1,2 +1,2 @@
 # cpp-leetcode
-My personal leetcode solution by C++.
+My personal leetcode solution by C++ / Rust.
